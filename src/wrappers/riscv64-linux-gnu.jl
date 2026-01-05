@@ -2,10 +2,11 @@
 export ncurses
 
 using GAP_jll
+using Ncurses_jll
 JLLWrappers.@generate_wrapper_header("GAP_pkg_browse")
 JLLWrappers.@declare_file_product(ncurses)
 function __init__()
-    JLLWrappers.@generate_init_header(GAP_jll)
+    JLLWrappers.@generate_init_header(GAP_jll, Ncurses_jll)
     JLLWrappers.@init_file_product(
         ncurses,
         "lib/gap/ncurses.so",
